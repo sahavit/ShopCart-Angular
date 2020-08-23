@@ -1,0 +1,43 @@
+<div *ngIf="!items && !buy">
+    There are no items in your cart
+    <div style="padding-left: 6em;">
+        <button>Buy</button>
+        <span style="padding-left:3em"></span>
+        <button (click)="goBack()">Back</button>
+    </div>
+</div>
+
+<div *ngIf="items && !buy">
+<div class="total">
+    <table>
+        <thead>
+            <tr>
+                <th>Sl No.</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prod of cartProducts; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{prod.productName}}</td>
+                <td>{{prod.price}}</td>
+                <td>{{prod.quantity}}</td>
+                <td>{{prod.price * prod.quantity}}</td>
+            </tr>
+            <tr>
+                <td colspan="4">Total</td>
+                <td>Rs. {{totalAmount}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="padding-left: 6em;">
+        <button>Buy</button>
+        <span style="padding-left:3em"></span>
+        <button (click)="goBack()">Back</button>
+    </div>
+</div>
+</div>
+

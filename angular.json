@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ShopCart"
+    }
+  },
+  "defaultProject": "ShopCart",
+  "cli": {
+    "analytics": false
+  }
 }

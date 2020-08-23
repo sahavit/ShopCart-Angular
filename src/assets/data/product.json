@@ -1,0 +1,114 @@
+[
+    {
+        "brandName": "Britannia",
+        "productName": "Britannia Marie Gold Biscuits",
+        "weight": "120 g",
+        "price": 12,
+        "mrp": 15,
+        "imageUrl": "./assets/images/marie.png",
+        "offerText": "20",
+        "quantity": 0
+    },
+    {
+        "brandName": "Nestle",
+        "productName": "Nestle KitKat 4 Finger Wafer Bar",
+        "weight": "37.3 g",
+        "price": 22,
+        "mrp": 25,
+        "imageUrl": "./assets/images/kitkat.png",
+        "offerText": "12",
+        "quantity": 0
+    },
+    {
+        "brandName": "Bingo",
+        "productName": "Bingo Mad Angles - Achaari Masti",
+        "weight": "72.5 g",
+        "price": 19,
+        "mrp": 20,
+        "imageUrl": "./assets/images/bingo.png",
+        "offerText": "5",
+        "quantity": 0
+    },
+    {
+        "brandName": "Dukes",
+        "productName": "Dukes Wafers - Waffy (Orange Flavor)",
+        "weight": "75 g",
+        "price": 42,
+        "mrp": 45,
+        "imageUrl": "./assets/images/waffy.png",
+        "offerText": "6.6",
+        "quantity": 0
+    },
+    {
+        "brandName": "Lotte",
+        "productName": "Lotte Choco - Pie",
+        "weight": "168 g",
+        "price": 65,
+        "mrp": 70,
+        "imageUrl": "./assets/images/lotte.png",
+        "offerText": "7",
+        "quantity": 0
+    },
+    {
+        "brandName": "Sunfeast",
+        "productName": "Sunfeast Dark Fantasy - Choco Fills",
+        "weight": "300 g",
+        "price": 80,
+        "mrp": 120,
+        "imageUrl": "./assets/images/darkfantasy.png",
+        "offerText": "33",
+        "quantity": 0
+    },
+    {
+        "brandName": "McCain",
+        "productName": "McCain Masala - Fries",
+        "weight": "375 g",
+        "price": 107,
+        "mrp": 115,
+        "imageUrl": "./assets/images/mcain.png",
+        "offerText": "7",
+        "quantity": 0
+    },
+    {
+        "brandName": "Parle",
+        "productName": "Parle Hide & Seek - Chocolate",
+        "weight": "200 g",
+        "price": 45,
+        "mrp": 60,
+        "imageUrl": "./assets/images/hidenseek.png",
+        "offerText": "25",
+        "quantity": 0
+    },
+    {
+        "brandName": "Unibic",
+        "productName": "Unibic Snack Bar - Almond & Oats",
+        "weight": "200 g",
+        "price": 36,
+        "mrp": 40,
+        "imageUrl": "./assets/images/unibic.png",
+        "offerText": "10",
+        "quantity": 0
+    },
+    {
+        "brandName": "Tasties",
+        "productName": "Tasties Rusk - Suji & Elaichi",
+        "weight": "200 g",
+        "price": 49,
+        "mrp": 55,
+        "imageUrl": "./assets/images/rusk.png",
+        "offerText": "11",
+        "quantity": 0
+    },
+    {
+        "brandName": "Saffola",
+        "productName": "Saffola Masala Oats - Veggie Twist",
+        "weight": "375 g",
+        "price": 179,
+        "mrp": 190,
+        "imageUrl": "./assets/images/saffola.png",
+        "offerText": "5.6",
+        "quantity": 0
+    }
+
+
+]

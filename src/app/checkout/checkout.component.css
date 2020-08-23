@@ -1,0 +1,19 @@
+.total{
+    margin: 2% 18% 2% 18%;
+    padding: 2% 2% 2% 2%;
+    /* display: flex; */
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td{
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: lightcyan;
+}

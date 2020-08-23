@@ -1,0 +1,46 @@
+<!-- <div style="background-color: rgb(141, 218, 253);"> -->
+<!-- <div class="total"> -->
+<div *ngIf="view">
+<div *ngFor="let prod of products">
+    <div class="contain">
+        <div><img [src]="prod.imageUrl" class="image"></div>
+        <div class="content">
+            <!-- <div class="cart">Hi Im cart</div> -->
+            <h3 style="margin-top: 2%;">{{prod.brandName}}</h3>
+            <h3>{{prod.productName}}</h3>
+            <h4><div style="margin-bottom: 2%;">Quantity: {{prod.weight}}</div>
+            <div>MRP: <del>{{prod.mrp|currency:"INR"}}</del><span style="color: red;">  {{prod.offerText}}% Off</span></div>
+            <div>Price: {{prod.price|currency:"INR"}}</div></h4>
+            <div class="btn-group cart">
+                <button class="button-cl" (click)="addToCart(prod)">Add to Cart</button>
+                <!-- <span style="padding-left:45%;"></span> -->
+                <button class="inc" [disabled]="prod.quantity == 0" (click)="deleteFromCart(prod)">-</button>
+                <div id="qtn">{{prod.quantity}}</div>
+                <button class="inc" (click)="addToCart(prod)">+</button>
+            </div>
+        </div>
+    <!-- </div>
+</div> -->
+<div class="footer">
+    <div>
+        <div>
+            <div>Total Amount: {{totalAmount}}</div>
+            <div>Total Quantity: {{totalQuantity}}</div>
+        </div>
+        <!-- <div style="padding-left:20em"> </div> -->
+        <div><button  id="checkout" (click)="goToCheckout()">Checkout</button></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<div *ngIf="checkout_yes">
+    Hi I'm yes
+</div>
+
+<div *ngIf="checkout_no">
+    Hi I'm no
+</div>
+
+
