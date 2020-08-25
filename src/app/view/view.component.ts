@@ -17,10 +17,12 @@ export class ViewComponent implements OnInit {
   cartProducts:Product[] = [];
   totalAmount: number = 0;
   totalQuantity: number = 0;
+  totalAmtSaved:number = 0;
 
   view= true;
   checkout_yes= false;
   checkout_no= false;
+  buy=false;
 
   ngOnInit(): void {  
     this.cartService.getProducts().subscribe((response) => {
@@ -49,6 +51,7 @@ export class ViewComponent implements OnInit {
     let index = this.findindexofArray(prod);
     this.totalAmount+=prod.price;
     this.totalQuantity+=1;
+    this.totalAmtSaved+=(prod.mrp-prod.price);
     
     if(index!=null){
       this.cartProducts[index].quantity+=1;
@@ -63,11 +66,8 @@ export class ViewComponent implements OnInit {
     let index = this.findindexofArray(prod);
     this.totalAmount-=prod.price;
     this.totalQuantity-=1;
+    this.totalAmtSaved+=(prod.mrp-prod.price);
     this.cartProducts[index].quantity-=1;
-    // else{
-    //   prod.quantity=1;
-    //   this.cartProducts.push(prod);
-    // }
   }
 
   goToCheckout(){
@@ -81,5 +81,32 @@ export class ViewComponent implements OnInit {
       this.checkout_yes=true;
     }
   }
+
+  goBack(){
+    if(this.checkout_no==true){
+      this.checkout_no=false;
+    }
+    else{
+      this.checkout_yes=false;
+    }
+    this.view=true;
+    }
+
+    buyProducts(){
+      this.buy=true;
+    }
+
+    close(){
+      this.buy=false;
+      this.checkout_yes=false;
+      this.checkout_no=true;
+      this.cartProducts=[];
+      this.products=[]
+      this.ngOnInit();
+      this.totalAmount=0;
+      this.totalAmtSaved=0;
+      this.totalQuantity=0;
+    }
+  
 
 }
