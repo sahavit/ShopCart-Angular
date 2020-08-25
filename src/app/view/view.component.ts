@@ -24,6 +24,7 @@ export class ViewComponent implements OnInit {
   checkout_no= false;
   buy=false;
 
+  //calls service class to get JSON data and populate array
   ngOnInit(): void {  
     this.cartService.getProducts().subscribe((response) => {
       this.products=response;
@@ -31,6 +32,7 @@ export class ViewComponent implements OnInit {
 
   }
 
+  //finds array index for add/removal of product from cart
   findindexofArray(prod:Product){
     let index:number;
     if(this.cartProducts.length==0){
@@ -47,6 +49,7 @@ export class ViewComponent implements OnInit {
     return index;
   }
 
+  //add products to cart
   addToCart(prod:Product){
     let index = this.findindexofArray(prod);
     this.totalAmount+=prod.price;
@@ -62,6 +65,7 @@ export class ViewComponent implements OnInit {
     }
   }
 
+  //delete products from cart
   deleteFromCart(prod:Product){
     let index = this.findindexofArray(prod);
     this.totalAmount-=prod.price;
@@ -70,9 +74,8 @@ export class ViewComponent implements OnInit {
     this.cartProducts[index].quantity-=1;
   }
 
+  //To review cart and checkout products
   goToCheckout(){
-    // this.cartService.setCart(this.cartProducts,this.totalAmount,this.totalQuantity);
-    // this.router.navigate(['check']);
     this.view=false;
     if(this.totalAmount==0){
       this.checkout_no=true;
@@ -80,8 +83,12 @@ export class ViewComponent implements OnInit {
     else{
       this.checkout_yes=true;
     }
+
+    // this.cartService.setCart(this.cartProducts,this.totalAmount,this.totalQuantity);
+    // this.router.navigate(['check']);
   }
 
+  //After checkout and buy
   goBack(){
     if(this.checkout_no==true){
       this.checkout_no=false;
@@ -92,10 +99,12 @@ export class ViewComponent implements OnInit {
     this.view=true;
     }
 
+    //To trigger modal
     buyProducts(){
       this.buy=true;
     }
 
+    //close button from modal. It will reset the cart 
     close(){
       this.buy=false;
       this.checkout_yes=false;

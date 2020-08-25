@@ -1,37 +1,29 @@
-<!-- <div style="background-color: rgb(141, 218, 253);"> -->
-<!-- <div class="total"> -->
 <div *ngIf="view">
-
+<h3 style="text-align: center;">Select Products to Buy</h3>
 <div *ngFor="let prod of products">
     <div class="contain">
         <div><img [src]="prod.imageUrl" class="image"></div>
         <div class="content">
-            <!-- <div class="cart">Hi Im cart</div> -->
             <p style="margin-top: 3%;">{{prod.brandName}}</p>
             <p id="pname"><b>{{prod.productName}}</b></p>
             <p>Quantity: {{prod.weight}}</p>
-            <p>MRP: <del>{{prod.mrp|currency:"INR"}}</del><span style="color: red;"> {{prod.offerText}}% Off</span></p>
-            <p>Final Price: {{prod.price|currency:"INR"}}</p>
-            <div class="btn-group cart">
+            <p>MRP: <del>{{prod.mrp|currency:"INR"}}</del><span style="color: red;"><b> {{prod.offerText}}% Off</b></span></p>
+            <p>Final Price: <b>{{prod.price|currency:"INR"}}</b></p>
+            <div class="cart">
                 <button class="button" (click)="addToCart(prod)">Add to Cart</button>
-                <span style="margin-right:45%;"></span>
+                <span id="space"></span>
                 <button class="inc" [disabled]="prod.quantity == 0" (click)="deleteFromCart(prod)">-</button>
-                <div id="qtn">{{prod.quantity}}</div>
+                <div id="qtn">&nbsp;{{prod.quantity}}&nbsp;</div>
                 <button class="inc" (click)="addToCart(prod)">+</button>
             </div>
         </div>
 
         <div class="footer">
             <div>
-                <!-- <div> -->
-                    <p>Total Amount: {{totalAmount}}</p>
-                    <p>Total Quantity: {{totalQuantity}}</p>
-                    <div style="margin-inline-start: auto;"><button class="check-btn" (click)="goToCheckout()">Checkout</button></div>
-                <!-- </div> -->
+                <p>Total Amount: {{totalAmount}}</p>
+                <p>Total Quantity: {{totalQuantity}}</p>
+                <div style="margin-inline-start: auto;"><button class="check-btn" (click)="goToCheckout()">Checkout</button></div>
             </div>
-        <!-- <div style="padding-left:20em"> </div> -->
-            <!-- <div><button class="check-btn" (click)="goToCheckout()">Checkout</button></div> -->
-            <!-- </div> -->
         </div>
     </div>
 </div>
@@ -39,7 +31,7 @@
 
 <div class="total">
 <div *ngIf="checkout_yes">
-    <div class="total">
+    <h3 style="text-align: center;">Review Cart and Checkout</h3>
         <table>
             <thead>
                 <tr>
@@ -77,11 +69,10 @@
             </tbody>
         </table>
         <div class="box">
-            <button class="button" style="max-width: 18%;" (click)="buyProducts()">Buy</button>
+            <button class="button" style="width: 18%;" (click)="buyProducts()">Buy</button>
             <span style="padding-left:3em"></span>
-            <button class="button" style="max-width: 18%;" (click)="goBack()">Back</button>
+            <button class="button" style="width: 18%;" (click)="goBack()">Back</button>
         </div>        
-    </div>
 </div>
 
 <div *ngIf="buy">
@@ -98,8 +89,8 @@
 
 <div *ngIf="checkout_no" id="checkout">
     There are no items in your cart!
-    <div style="height: 30px;">
-        <button class="button" style="margin-top: 2%; width: 20%;" (click)="goBack()">Continue Shopping</button>
+    <div style="height: 60px;">
+        <button class="button" id="continue-btn" (click)="goBack()">Continue Shopping</button>
     </div>
 </div>
 </div>
