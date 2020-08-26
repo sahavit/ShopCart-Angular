@@ -1,3 +1,6 @@
+// This Component is not used. It was included in the original idea to use two components.
+// But currently using only one component.
+
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../shared/services/cart.service';
 import { Product } from '../shared/models/Product';

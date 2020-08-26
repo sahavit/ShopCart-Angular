@@ -16,71 +16,42 @@ export class CartService {
   containsData: boolean = false;
   prodUrl:string = "./assets/data/product.json";
 
-  // setProducts(){
-  //   const promise = new Promise((resolve, reject) => {
-  //     // const apiURL = this.prodUrl;
-  //     this.http.get<Product[]>(this.prodUrl).toPromise()
-  //       .then((res: any) => {
-  //         // Success
-  //         this.products = res.map((res: any) => {
-  //           return new Product(
-  //             res.brandName,
-  //             res.productName,
-  //             res.quantity,
-  //             res.price,
-  //             res.mrp,
-  //             res.imageUrl,
-  //             res.offerText
-  //           );
-  //         });
-  //         resolve();
-  //       },
-  //         err => {
-  //           // Error
-  //           reject(err);
-  //         }
-  //       );
-  //   });
-  //   return promise;
-  // }
-
-  // get():Product[]{
-  //   this.setProducts();
-  //   this.products.forEach(element => {
-  //     console.log(element.brandName)
-  //   });
-  //   return this.products;
-  // }
-
+  //To get products from json file
   getProducts():Observable<Product[]>{
       return this.http.get<Product[]>(this.prodUrl);
   }
 
+  //Not used (Originally created for checkout component)
   setCart(products:Product[],totalAmount:number,totalQuantity:number){
     this.cartProducts=products;
     this.totalAmount=totalAmount;
     this.totalQuantity=totalQuantity;
   }
 
+  //Not used (Originally created for checkout component)
   clearCart(){
     this.cartProducts=[];
     this.totalAmount=0;
     this.totalQuantity=0;
   }
 
+  //Not used (Originally created for checkout component)
   getCart(){
     console.log(this.cartProducts)
     return this.cartProducts;
   }
 
+  //Not used (Originally created for checkout component)
   getAmount(){
     return this.totalAmount;
   }
 
+  //Not used (Originally created for checkout component)
   getQuantity(){
     return this.totalQuantity;
   }
 
+  //Not used (Originally created for checkout component)
   getContainsData(){
     if(this.cartProducts==[])
       this.containsData=false;
@@ -89,10 +60,7 @@ export class CartService {
     return this.containsData;
   }
 
-  getObervableProduct():Observable<Product[]>{
-    return this.http.get<Product[]>(this.prodUrl);
-  }
-
+  //Not used (Originally created for checkout component)
   getProductBack(){
     return this.cartProducts;
   }
