@@ -1,6 +1,5 @@
 .total{
     margin: 2% 28%;
-    overflow: hidden;
     margin-bottom: 5%;
 }
 
@@ -37,10 +36,7 @@ p{
 .button{
     height: 100%;
     width: 30%;
-    /* border-radius: 25px; */
     background-color: lightseagreen;
-    /* margin-right: 45%; */
-    /* border: 0px; */
 }
 
 .button:hover{

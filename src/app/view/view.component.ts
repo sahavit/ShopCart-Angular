@@ -70,8 +70,12 @@ export class ViewComponent implements OnInit {
     let index = this.findindexofArray(prod);
     this.totalAmount-=prod.price;
     this.totalQuantity-=1;
-    this.totalAmtSaved+=(prod.mrp-prod.price);
+    this.totalAmtSaved-=(prod.mrp-prod.price);
     this.cartProducts[index].quantity-=1;
+    if(this.cartProducts[index].quantity==0){
+      this.cartProducts.splice(index,1);
+    }
+    console.log(this.cartProducts[index]);
   }
 
   //To review cart and checkout products
