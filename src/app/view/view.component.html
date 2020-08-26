@@ -1,5 +1,8 @@
+<!-- Displays the product list  -->
 <div *ngIf="view">
 <h3 style="text-align: center;">Select Products to Buy</h3>
+
+<!-- Iterates through product array to display all products -->
 <div *ngFor="let prod of products">
     <div class="contain">
         <div><img [src]="prod.imageUrl" class="image"></div>
@@ -18,6 +21,7 @@
             </div>
         </div>
 
+        <!-- Displays the static footer at the bottom of webpage -->
         <div class="footer">
             <div>
                 <p>Total Amount: {{totalAmount}}</p>
@@ -29,6 +33,7 @@
 </div>
 </div>
 
+<!-- View to review cart and buy or Go back -->
 <div class="total">
 <div *ngIf="checkout_yes">
     <h3 style="text-align: center;">Review Cart and Checkout</h3>
@@ -43,6 +48,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Iterates through the cartProducts array to display products in the cart -->
                 <tr *ngFor="let prod of cartProducts">
                     <td><img class="img-sm" [src]="prod.imageUrl"></td>
                     <td>{{prod.productName}}</td>
@@ -75,6 +81,7 @@
         </div>        
 </div>
 
+<!-- Modal gets triggered when buy button is clicked -->
 <div *ngIf="buy">
     <div class="modal">
         <div class="modal-content">
@@ -83,10 +90,10 @@
           <p>Amount {{totalAmount|currency:"INR"}} is paid.</p>
           <p>You saved<span style="color: red;"> {{totalAmtSaved|currency:"INR"}}</span>!</p>
         </div>
-      
     </div>
 </div>
 
+<!-- To display if no items are in the cart -->
 <div *ngIf="checkout_no" id="checkout">
     There are no items in your cart!
     <div style="height: 60px;">
